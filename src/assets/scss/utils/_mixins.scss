@@ -126,3 +126,42 @@
     @error 'Invalid support-required value. Must be "oldie"==>IE8 and above/ Android native browser 4+/ Safari 4.3 OR "recent"==>IE9+/ Android native browser 4.0+/ Safari 4.3+ OR "modern"==>IE9+/ Android native browser 4.4+/ Safari 5.1+';
   }
 }
+
+// DESKTOP WIDTH //
+@mixin d($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+// PHONE WIDTH //
+@mixin m($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+// DESKTOP HEIGHT //
+@mixin dh($height) {
+  @media screen and (max-height: $height) {
+    @content;
+  }
+}
+// PHONE HEIGHT //
+@mixin mh($height) {
+  @media screen and (min-height: $height) {
+    @content;
+  }
+}
+
+// PHONE WIDTH, DESKTOP HEIGHT //
+@mixin max-height-min-width($height, $width) {
+  @media screen and (max-height: $height) and (min-width: $width) {
+    @content;
+  }
+}
+
+// HOVERS //
+@mixin hover($width) {
+  @media screen and (min-width: $width), (any-hover: hover) {
+    @content;
+  }
+}
